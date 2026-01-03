@@ -1,0 +1,24 @@
+<svg width="800" height="480" viewBox="0 0 800 480" fill="none" xmlns="http://www.w3.org/2000/svg">
+<defs>
+  <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
+    <stop stop-color="#5CF5FF" offset="0%"/>
+    <stop stop-color="#9B8CFF" offset="100%"/>
+  </linearGradient>
+  <linearGradient id="g2" x1="0" y1="0" x2="1" y2="0">
+    <stop stop-color="#0B1728" offset="0%"/>
+    <stop stop-color="#0F1020" offset="100%"/>
+  </linearGradient>
+</defs>
+<rect width="800" height="480" rx="24" fill="url(#g2)"/>
+<rect x="28" y="28" width="744" height="424" rx="20" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.08)" />
+<g opacity="0.18">
+  <path d="M80 360C160 300 220 340 300 280C380 220 400 120 520 160C640 200 680 340 740 320" stroke="#5CF5FF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M120 300C200 260 240 280 320 240C400 200 460 90 560 140C660 190 700 300 760 280" stroke="#9B8CFF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<circle cx="120" cy="120" r="18" fill="#5CF5FF" opacity="0.5"/>
+<circle cx="210" cy="90" r="10" fill="#9B8CFF" opacity="0.6"/>
+<circle cx="680" cy="110" r="14" fill="#5CF5FF" opacity="0.5"/>
+<text x="60" y="230" fill="#9FB0C5" font-family="Space Grotesk, 'Segoe UI', sans-serif" font-size="40" font-weight="600">WHITECORE</text>
+<text x="60" y="275" fill="#5CF5FF" font-family="Space Grotesk, 'Segoe UI', sans-serif" font-size="26" font-weight="700">CLIENT</text>
+<text x="60" y="320" fill="#8CA0B8" font-family="Space Grotesk, 'Segoe UI', sans-serif" font-size="18">превью чита по умолчанию</text>
+</svg>

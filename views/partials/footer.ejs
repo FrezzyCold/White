@@ -1,0 +1,20 @@
+  </main>
+
+  <footer class="shell footer">
+    <div>
+      <strong>Whitecore Client</strong> — приватный клиент с упором на безопасность и тишину.
+    </div>
+    <div class="muted">© <%= year %> · secure by design</div>
+  </footer>
+
+  <script>
+    window.WHITECORE = {
+      authed: <%= currentUser ? 'true' : 'false' %>
+    };
+  </script>
+  <script src="/js/app.js"></script>
+  <% if (typeof pageScript !== 'undefined' && pageScript) { %>
+    <script src="/js/<%= pageScript %>"></script>
+  <% } %>
+</body>
+</html>

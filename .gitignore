@@ -1,0 +1,13 @@
+node_modules/
+.env
+.npm-cache/
+.npm-tmp/
+data.sqlite
+data.sqlite-*
+uploads/
+downloads/*.zip
+!downloads/whitecore-default.zip
+downloads/README.txt
+*.log
+*.tmp
+*.DS_Store

@@ -1,0 +1,39 @@
+<%- include('partials/header', { title: 'Регистрация · Whitecore', bodyClass: 'page-auth', pageScript: 'auth.js' }) %>
+
+<section class="auth-card">
+  <div>
+    <p class="eyebrow">whitecore signup</p>
+    <h1>Создайте аккаунт</h1>
+    <p class="lede">Регистрация откроет доступ к скачиванию и обновлениям клиента. Всегда можно изменить пароль в профиле.</p>
+  </div>
+
+  <form class="auth-form" method="post" action="/register">
+    <input type="hidden" name="next" value="<%= next %>">
+    <label>
+      <span>Никнейм</span>
+      <input name="username" required autocomplete="username" placeholder="Ваш ник">
+    </label>
+    <label>
+      <span>Email</span>
+      <input type="email" name="email" required autocomplete="email" placeholder="you@example.com">
+    </label>
+    <label>
+      <span>Пароль</span>
+      <input type="password" name="password" required autocomplete="new-password" placeholder="Пароль">
+    </label>
+    <div class="captcha-row">
+      <label class="captcha-input">
+        <span>Капча</span>
+        <input name="captcha" required placeholder="Код с картинки">
+      </label>
+      <div class="captcha-box">
+        <img src="/captcha" alt="Капча" class="captcha-img">
+        <button type="button" class="ghost tiny" data-refresh-captcha>Обновить</button>
+      </div>
+    </div>
+    <button class="primary wide">Создать аккаунт</button>
+    <p class="muted center">Уже есть доступ? <a href="/login">Войдите</a></p>
+  </form>
+</section>
+
+<%- include('partials/footer', { pageScript: 'auth.js' }) %>

@@ -1,0 +1,27 @@
+{
+  "name": "ento",
+  "version": "1.0.0",
+  "description": "Whitecore client site with auth, captcha, admin uploads, and optional Telegram bot",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js",
+    "test": "echo \"No automated tests configured\" && exit 0"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "bcryptjs": "^3.0.3",
+    "dotenv": "^17.2.3",
+    "ejs": "^3.1.10",
+    "express": "^5.2.1",
+    "express-session": "^1.18.2",
+    "morgan": "^1.10.1",
+    "multer": "^2.0.2",
+    "node-telegram-bot-api": "^0.67.0",
+    "sqlite3": "^5.1.7",
+    "svg-captcha": "^1.4.0"
+  }
+}

@@ -1,0 +1,77 @@
+<%- include('partials/header', { title: 'Админка · Whitecore', bodyClass: 'page-admin' }) %>
+
+<section class="admin-grid">
+  <div class="admin-card">
+    <div class="card-title">
+      <div>
+        <p class="eyebrow">Превью</p>
+        <h2>Картинка клиента</h2>
+      </div>
+      <span class="pill pill-muted">Видна на главной</span>
+    </div>
+    <div class="preview-block">
+      <% if (imageExists) { %>
+        <img src="<%= cheatImageUrl %>" alt="Превью чита Whitecore" class="cheat-preview admin-preview">
+      <% } else { %>
+        <div class="muted">Изображение пока не загружено</div>
+      <% } %>
+    </div>
+    <form class="upload-form" action="/admin/upload-image" method="post" enctype="multipart/form-data" data-upload-form="image">
+      <label class="file-label">
+        <span>Загрузить превью (PNG/JPG)</span>
+        <input type="file" name="cheatImage" accept="image/*" required>
+      </label>
+      <button class="primary">Обновить картинку</button>
+      <div class="upload-progress" data-progress hidden>
+        <div class="progress-meta">
+          <span class="progress-label">Загрузка...</span>
+          <span class="progress-value">0%</span>
+        </div>
+        <div class="progress-track">
+          <div class="progress-fill" style="width: 0%;"></div>
+        </div>
+      </div>
+    </form>
+  </div>
+
+  <div class="admin-card">
+    <div class="card-title">
+      <div>
+        <p class="eyebrow">Сборка</p>
+        <h2>ZIP файл для скачивания</h2>
+      </div>
+      <% if (zipExists && zipStats) { %>
+        <span class="pill">Вес: <%= (zipStats.size / 1024 / 1024).toFixed(2) %> МБ</span>
+      <% } else { %>
+        <span class="pill pill-muted">Файл не найден</span>
+      <% } %>
+    </div>
+    <div class="muted small">
+      Текущий путь: <code><%= zipPath %></code><br>
+      <% if (zipExists && zipStats) { %>
+        Обновлен: <%= zipStats.mtime.toLocaleString('ru-RU') %>
+      <% } else { %>
+        Загрузите ZIP, старые файлы удалятся при замене
+      <% } %>
+    </div>
+
+    <form class="upload-form" action="/admin/upload-zip" method="post" enctype="multipart/form-data" data-upload-form="zip">
+      <label class="file-label">
+        <span>Загрузить ZIP</span>
+        <input type="file" name="cheatZip" accept=".zip" required>
+      </label>
+      <button class="primary">Обновить ZIP</button>
+      <div class="upload-progress" data-progress hidden>
+        <div class="progress-meta">
+          <span class="progress-label">Загрузка...</span>
+          <span class="progress-value">0%</span>
+        </div>
+        <div class="progress-track">
+          <div class="progress-fill" style="width: 0%;"></div>
+        </div>
+      </div>
+    </form>
+  </div>
+</section>
+
+<%- include('partials/footer', { pageScript: 'admin.js' }) %>

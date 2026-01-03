@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= title || 'Whitecore Client' %></title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Manrope:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body class="<%= bodyClass || '' %>">
+  <div class="bg-effects" aria-hidden="true">
+    <span class="orb orb-1"></span>
+    <span class="orb orb-2"></span>
+    <span class="orb orb-3"></span>
+    <span class="grid"></span>
+  </div>
+
+  <header class="shell topbar">
+    <div class="brand">
+      <a href="/" class="logo">Whitecore <span>Client</span></a>
+      <span class="tag muted">Тихий клиент без палевных загрузок</span>
+    </div>
+    <nav class="nav">
+      <a href="/">Главная</a>
+      <a href="/#download">Скачать</a>
+      <a href="/#about">О чите</a>
+      <% if (currentUser && currentUser.isAdmin) { %>
+        <a href="/admin">Админка</a>
+      <% } %>
+    </nav>
+    <div class="nav-actions">
+      <% if (currentUser) { %>
+        <span class="pill pill-muted">Вы: <%= currentUser.username %></span>
+        <form method="post" action="/logout" class="inline-form">
+          <button class="ghost">Выйти</button>
+        </form>
+      <% } else { %>
+        <a class="ghost" href="/login">Войти</a>
+        <a class="primary small" href="/register">Регистрация</a>
+      <% } %>
+    </div>
+  </header>
+
+  <main class="shell main-shell">
+    <% if (flash) { %>
+      <div class="flash flash-<%= flash.type %>"><%= flash.message %></div>
+    <% } %>
